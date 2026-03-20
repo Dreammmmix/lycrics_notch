@@ -17,11 +17,7 @@
 
 ## Screenshots
 
-<!-- 
-  📸 在下方添加产品截图
-  建议尺寸：宽度 800px+，PNG 或 GIF 格式
-  可以展示：收起状态歌词、展开状态歌词、不同播放器效果等
--->
+![](assets/20260320_173218_image.png)
 
 <p align="center">
   <!-- 截图 1：收起状态 — 刘海屏下方显示歌词 -->
@@ -29,25 +25,18 @@
   <i>收起状态 — 刘海屏下方实时歌词</i>
 </p>
 
+![](assets/20260320_173325_image.png)
+
 <p align="center">
   <!-- 截图 2：展开状态 — 完整歌词显示 -->
   <!-- <img src="screenshots/expanded-notch-lyrics.png" width="600" alt="展开状态歌词" /> -->
   <i>展开状态 — 完整歌词显示</i>
 </p>
 
-<p align="center">
-  <!-- 截图 3：歌词颜色跟随专辑封面 -->
-  <!-- <img src="screenshots/lyrics-color-sync.png" width="600" alt="歌词颜色同步" /> -->
-  <i>歌词颜色自动跟随专辑封面主色调</i>
-</p>
-
-<p align="center">
-  <!-- 截图 4：GIF 动图 — 实际使用效果 -->
-  <!-- <img src="screenshots/demo.gif" width="600" alt="使用演示" /> -->
-  <i>实际使用演示</i>
-</p>
 
 ---
+
+
 
 ## 功能特性
 
@@ -60,14 +49,15 @@
 
 ### 歌词源 Fallback 链
 
-| 优先级 | 源 | 类型 | 说明 |
-|:---:|:---|:---|:---|
-| 1 | LRCLIB | synced + plain | 免费开放 API |
-| 2 | LRCLIB (cleaned) | synced + plain | 清洗标题后重试 |
-| 3 | 网易云音乐 | synced | 中文歌覆盖最强 |
-| 4 | Musixmatch (via LewdHuTao) | plain | 1400 万+ 歌词库 |
-| 5 | YouTube Music (via LewdHuTao) | plain | 补充覆盖 |
-| 6 | lyrics.ovh | plain | 兜底 |
+
+| 优先级 | 源                            | 类型           | 说明            |
+| :------: | :------------------------------ | :--------------- | :---------------- |
+|   1   | LRCLIB                        | synced + plain | 免费开放 API    |
+|   2   | LRCLIB (cleaned)              | synced + plain | 清洗标题后重试  |
+|   3   | 网易云音乐                    | synced         | 中文歌覆盖最强  |
+|   4   | Musixmatch (via LewdHuTao)    | plain          | 1400 万+ 歌词库 |
+|   5   | YouTube Music (via LewdHuTao) | plain          | 补充覆盖        |
+|   6   | lyrics.ovh                    | plain          | 兜底            |
 
 ## Features
 
@@ -83,6 +73,7 @@
 ## 安装 / Installation
 
 **系统要求 / System Requirements:**
+
 - macOS **14 Sonoma** 或更高版本
 - Apple Silicon 或 Intel Mac
 
@@ -112,12 +103,13 @@ open boringNotch.xcodeproj
 
 ### 修改的文件
 
-| 文件 | 说明 |
-|:---|:---|
-| `boringNotch/components/Notch/ClosedNotchLyricView.swift` | **新增** — 收起状态歌词视图 |
-| `boringNotch/managers/MusicManager.swift` | 多源歌词 fallback + 并发控制 + LRC 解析 |
-| `boringNotch/ContentView.swift` | 插入 ClosedNotchLyricView |
-| `boringNotch/models/Constants.swift` | enableLyrics 默认开启 |
+
+| 文件                                                      | 说明                                    |
+| :---------------------------------------------------------- | :---------------------------------------- |
+| `boringNotch/components/Notch/ClosedNotchLyricView.swift` | **新增** — 收起状态歌词视图            |
+| `boringNotch/managers/MusicManager.swift`                 | 多源歌词 fallback + 并发控制 + LRC 解析 |
+| `boringNotch/ContentView.swift`                           | 插入 ClosedNotchLyricView               |
+| `boringNotch/models/Constants.swift`                      | enableLyrics 默认开启                   |
 
 ### 架构
 
